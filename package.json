@@ -1,0 +1,10 @@
+{
+  "name": "Platform_For_Hotel_Business_Sales_Department",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}
