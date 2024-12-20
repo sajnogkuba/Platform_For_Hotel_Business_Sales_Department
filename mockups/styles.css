@@ -17,12 +17,12 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-/* NAVBAR */
 .navbar{
     border: 5px solid #f4bc30;
 }
 
 .navbar-container{
+    overflow-x: auto;
     width: 100vw;
     height: auto;
     background-color: white;
@@ -33,6 +33,7 @@ body {
 }
 
 .navbar-menu ul{
+    align-items: center;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -46,7 +47,7 @@ body {
 .navbar-menu ul li a{
     text-decoration: none;
     color: #343d3a;
-    font-size: 5vh;
+    font-size: 3vh;
 }
 
 .navbar-menu ul li a:hover{
@@ -58,16 +59,7 @@ body {
     color: #f4bc30;
 }
 
-/* LOGIN PAGE */
-.login-page {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.login-page::before {
+.contact-page::before, .home-page::before, .about-page::before, .login-page::before {
     content: "";
     position: absolute;
     top: 0;
@@ -78,6 +70,14 @@ body {
     background-size: cover;
     filter: grayscale(100%) brightness(50%);
     z-index: -1;
+}
+
+.home-page, .about-page, .contact-page, .login-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
 .logo {
@@ -125,73 +125,7 @@ body {
     transition: 0.3s;
 }
 
-/* CONTACT PAGE*/
-.contact-page {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.contact-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/background.webp') no-repeat center bottom;
-    background-size: cover;
-    filter: grayscale(100%) brightness(50%);
-    z-index: -1;
-}
-
-/* HOME PAGE*/
-.home-page {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.home-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/background.webp') no-repeat center bottom;
-    background-size: cover;
-    filter: grayscale(100%) brightness(50%);
-    z-index: -1;
-}
-
-/* ABOUT PAGE*/
-.about-page {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.about-page::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/background.webp') no-repeat center bottom;
-    background-size: cover;
-    filter: grayscale(100%) brightness(50%);
-    z-index: -1;
-}
-
-.about-content{
+.about-content, .contact-content{
     width: 90%;
     height: 85%;
     border-radius: 5px;
@@ -202,14 +136,14 @@ body {
     padding: 10px;
 }
 
-.about-content h1{
+.about-content h1, .contact-content h1{
     font-size: 5vh;
 }
-.about-content h2{
+.about-content h2, .contact-content h2{
     font-size: 4vh;
 }
 
-.about-content p{
+.about-content p, .contact-content p{
     background: white;
     padding: 10px;
     font-style: italic;
@@ -225,7 +159,7 @@ body {
 }
 .team-member{
     display: flex;
-    flex-direction: column; /* Ustaw zdjęcie nad opisem */
+    flex-direction: column;
     align-items: center;
     text-align: center;
     width: 30%;
@@ -246,7 +180,7 @@ body {
 
 .photo-galery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Automatyczna liczba kolumn */
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr)); /* Automatyczna liczba kolumn */
     gap: 20px;
     padding: 20px;
     background-color: white;
@@ -271,9 +205,6 @@ body {
     transform: scale(1.05);
 }
 
-
-
-/* FOOTER*/
 .footer {
     justify-items: center;
     width: 100%;
