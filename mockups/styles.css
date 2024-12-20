@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #e1d19e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    border: 5px solid #f4bc30;
+}
+
+.navbar-container{
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-menu ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu ul li a img{
+    height: 5vh;
+    width: auto;
+}
+
+.navbar-menu ul li a{
+    text-decoration: none;
+    color: #343d3a;
+    font-size: 5vh;
+}
+
+.navbar-menu ul li a:hover{
+    color: #f4bc30;
+    transition: 0.3s;
+}
+
+.navbar-menu ul li a.active {
+    color: #f4bc30;
+}
+
+/* LOGIN PAGE */
+.login-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.login-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/background.webp') no-repeat center bottom;
+    background-size: cover;
+    filter: grayscale(100%) brightness(50%);
+    z-index: -1;
+}
+
+.logo {
+    margin-top: 2vh;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5vh;
+}
+
+.logo img {
+    height: 30vh;
+    max-height: 500px;
+    max-width: 300px;
+    width: auto;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-button {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    justify-content: center;
+    padding: 6vw 6vw;
+    font-size: 5vh;
+    color: #343d3a;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.login-button .icon {
+    font-size: 10vh;
+    margin-right: 10px;
+    filter: grayscale(100%) brightness(100%);
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+
