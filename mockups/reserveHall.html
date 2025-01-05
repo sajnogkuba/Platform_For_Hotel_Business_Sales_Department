@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <title>Martyard - Reserve Hall</title>
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page-container">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-menu">
+        <ul>
+          <li><a href="index.html"><img src="../assets/logo.png" alt="Martyard logo"></a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="halls.html" >Conference halls</a></li>
+          <li><a href="reservations.html" class="active">Reservations</a></li>
+          <li><a href="login.html" >Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="reservations-content">
+    <div class="container-reservations">
+      <div class="add-form">
+        <h2>Add reservation</h2>
+        <p>Please fill in the form below to send reservation request.</p>
+        <form method="post" action="/register">
+          <label for="hall">Hall:</label>
+          <select id="hall" name="hall" required>
+            <option value="" disabled selected>Select a hall</option>
+            <option value="hall-a">Hall A</option>
+            <option value="hall-b">Hall B</option>
+            <option value="hall-c">Hall C</option>
+            <option value="hall-d">Hall D</option>
+          </select>
+
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" name="start-date" required>
+
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" name="end-date" required>
+
+          <button type="submit">Send request.</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2024 Martyard Hotel. All rights reserved.    Phone: <a href="tel:+123456789">+123 456 789</a>    Mail: <a href="mailto:info@martyardhotel.com">info@martyardhotel.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
