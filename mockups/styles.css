@@ -393,3 +393,69 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+.login-form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+}
+
+.login-form p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #b8860b;
+    outline: none;
+    box-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
+}
+
+.login-form button {
+    padding: 12px 20px;
+    background-color: #b8860b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.login-form button:hover {
+    background-color: #f4bc30;
+}
