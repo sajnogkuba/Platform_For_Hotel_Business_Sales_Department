@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta charset="UTF-8">
-  <title>Martyard - Reserve Hall</title>
+  <title>Martyard - Add Hall</title>
   <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +20,8 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="halls.html" >Conference halls</a></li>
-          <li><a href="reservations.html" class="active">Reservations</a></li>
+          <li><a href="halls.html" class="active">Conference halls</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
           <li><a href="login.html" >Login</a></li>
         </ul>
       </div>
@@ -30,25 +30,18 @@
   <div class="reservations-content">
     <div class="container-reservations">
       <div class="add-form">
-        <h2>Add reservation</h2>
-        <p>Please fill in the form below to send reservation request.</p>
+        <h2>Add hall</h2>
+        <p>Please fill in the form below to add new conference hall.</p>
         <form method="post">
-          <label for="hall">Hall:</label>
-          <select id="hall" name="hall" required>
-            <option value="" disabled selected>Select a hall</option>
-            <option value="hall-a">Hall A</option>
-            <option value="hall-b">Hall B</option>
-            <option value="hall-c">Hall C</option>
-            <option value="hall-d">Hall D</option>
-          </select>
+          <label for="name">Hall Name:</label>
+          <input type="text" id="name" name="first-name" placeholder="Enter hall name" required>
+          <label for="surface">Surface (sqm):</label>
+          <input type="number" id="surface" name="surface" placeholder="Enter surface area" min="1" required>
 
-          <label for="start-date">Start Date:</label>
-          <input type="date" id="start-date" name="start-date" required>
+          <label for="price">Price per Hour (PLN):</label>
+          <input type="number" id="price" name="price" placeholder="Enter price per hour" min="1" required>
 
-          <label for="end-date">End Date:</label>
-          <input type="date" id="end-date" name="end-date" required>
-
-          <button type="submit">Send request.</button>
+          <button type="submit">Add Hall.</button>
         </form>
       </div>
     </div>
