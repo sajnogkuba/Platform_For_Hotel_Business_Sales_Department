@@ -59,7 +59,7 @@ body {
     color: #f4bc30;
 }
 
-.contact-page::before, .home-page::before, .about-page::before, .login-page::before, .halls-page::before, .reservations-page::before, .registration-page::before {
+.page-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -72,7 +72,7 @@ body {
     z-index: -1;
 }
 
-.home-page, .about-page, .contact-page, .login-page, .halls-page, .reservations-page, .registration-page {
+.page-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -137,7 +137,7 @@ body {
     border: solid 3px #f4bc30;
 }
 
-.login-content, .home-content{
+.login-content, .home-content, .reservations-content, .halls-content{
     justify-items: center;
 }
 
@@ -458,4 +458,54 @@ body {
 
 .login-form button:hover {
     background-color: #f4bc30;
+}
+
+.reservation-details, .hall-details{
+    width: 80%;
+    height: 100%;
+    padding: 4vh;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    justify-items: left;
+
+}
+
+.reservation-details h2, .hall-details h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.reservation-details p, .hall-details p {
+    color: #666666;
+    font-size: 3vh;
+    line-height: 1.8;
+}
+
+.reservation-info, .hall-info {
+    margin-top: 20px;
+    font-size: 3vh;
+}
+
+.reservation-info p, .hall-info p {
+    margin: 10px 0;
+    font-size: 3vh;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.reservation-info strong, .hall-info strong {
+    color: #d4af37;
+    font-size: 3.2vh;
+}
+
+.hall-details img {
+    height: 50%;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
