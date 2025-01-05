@@ -125,7 +125,7 @@ body {
     transition: 0.3s;
 }
 
-.about-content, .contact-content, .login-content, .home-content, .halls-content, .reservations-content {
+.about-content, .contact-content, .login-content, .home-content, .halls-content, .reservations-content, .account-content {
     width: 90%;
     height: 85%;
     border-radius: 5px;
@@ -137,7 +137,7 @@ body {
     border: solid 3px #f4bc30;
 }
 
-.login-content, .home-content, .reservations-content, .halls-content{
+.login-content, .home-content, .reservations-content, .halls-content, .account-content{
     justify-items: center;
 }
 
@@ -496,7 +496,7 @@ select:focus {
     background-color: #f4bc30;
 }
 
-.reservation-details, .hall-details{
+.reservation-details, .hall-details, .account-details{
     width: 80%;
     height: 100%;
     padding: 4vh;
@@ -507,7 +507,7 @@ select:focus {
 
 }
 
-.reservation-details h2, .hall-details h2 {
+.reservation-details h2, .hall-details h2, .account-details h2 {
     text-align: center;
     text-decoration: underline;
     color: #333333;
@@ -516,25 +516,25 @@ select:focus {
     font-weight: bold;
 }
 
-.reservation-details p, .hall-details p {
+.reservation-details p, .hall-details p, .account-details p {
     color: #666666;
     font-size: 3vh;
     line-height: 1.8;
 }
 
-.reservation-info, .hall-info {
+.reservation-info, .hall-info, .account-info {
     margin-top: 20px;
     font-size: 3vh;
 }
 
-.reservation-info p, .hall-info p {
+.reservation-info p, .hall-info p, .account-info p {
     margin: 10px 0;
     font-size: 3vh;
     line-height: 1.5;
     color: #333333;
 }
 
-.reservation-info strong, .hall-info strong {
+.reservation-info strong, .hall-info strong, .account-info strong {
     color: #d4af37;
     font-size: 3.2vh;
 }

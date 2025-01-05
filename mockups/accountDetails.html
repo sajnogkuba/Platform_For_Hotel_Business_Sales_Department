@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta charset="UTF-8">
-  <title>Martyard - Add Hall</title>
+  <title>Martyard - Account</title>
   <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,37 +19,33 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="halls.html" class="active">Conference halls</a></li>
-          <li><a href="reservations.html">Reservations</a></li>
-          <li><a href="login.html" >Login</a></li>
-          <li><a href="accountDetails.html">AccountDetails</a></li>
+          <li><a href="halls.html">Conference halls</a></li>
+          <li><a href="reservations.html" >Reservations</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="accountDetails.html" class="active">AccountDetails</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="reservations-content">
-    <div class="container-reservations">
-      <div class="add-form">
-        <h2>Add hall</h2>
-        <p>Please fill in the form below to add new conference hall.</p>
-        <form method="post">
-          <label for="name">Hall Name:</label>
-          <input type="text" id="name" name="first-name" placeholder="Enter hall name" required>
-          <label for="surface">Surface (sqm):</label>
-          <input type="number" id="surface" name="surface" placeholder="Enter surface area" min="1" required>
+  <div class="account-content">
+    <div class="account-details">
+      <h2>Account Details</h2>
+      <p>Below are your accounts details:</p>
 
-          <label for="price">Price per Hour (PLN):</label>
-          <input type="number" id="price" name="price" placeholder="Enter price per hour" min="1" required>
-
-          <button type="submit">Add Hall.</button>
-        </form>
+      <div class="account-info">
+        <p><strong>ID:</strong> 123456</p>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john.doe@martyard.com</p>
+        <p><strong>Role:</strong> Employee</p>
+        <p><strong>Phone:</strong>+123 123 123</p>
       </div>
+      <a href="editAccount.html" class="account-button">Edit Account</a>
     </div>
   </div>
+
   <footer class="footer">
     <p>&copy; 2024 Martyard Hotel. All rights reserved.    Phone: <a href="tel:+123456789">+123 456 789</a>    Mail: <a href="mailto:info@martyardhotel.com">info@martyardhotel.com</a></p>
   </footer>
-
 </div>
 </body>
 </html>
