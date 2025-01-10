@@ -6,9 +6,9 @@ router.get('/', (req, res) => {
     db.query('SELECT * FROM Reservations', (err, results) => {
         if (err) {
             res.status(500).json({ error: err.message });
-            return;
+        } else{
+            res.status(200).json(results);
         }
-        res.json(results);
     });
 });
 
@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
         } else if (results.length === 0) {
             res.status(404).json({ error: 'Reservation not found' });
         } else {
-            res.json(results[0]);
+            res.status(200).json(results[0]);
         }
     });
 });

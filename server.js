@@ -5,12 +5,14 @@ const bodyParser = require('body-parser');
 
 const db = require('./db');
 const reservations = require('./routes/reservations');
+const halls = require('./routes/halls');
 
 dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
 app.use('/api/reservations', reservations);
+app.use('/api/halls', halls);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
