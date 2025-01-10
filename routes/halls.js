@@ -3,11 +3,20 @@ const router = express.Router();
 const db = require('../db');
 
 router.get('/', (req, res) => {
-   db.query('SELECT * FROM Halls', (err, results) => {
+    const { page = 1, limit = 10 } = req.query;
+    const offset = (page - 1) * limit;
+   db.query('SELECT * FROM Halls LIMIT ? OFFSET ?', [parseInt(limit), parseInt(offset)], (err, results) => {
        if (err) {
            res.status(500).json({ error: err.message });
        } else{
-           res.status(200).json(results);
+              db.query('SELECT COUNT(*) AS total FROM Halls', (err, countResults) => {
+                if (err) {
+                     res.status(500).json({ error: err.message });
+                } else {
+                     const total = countResults[0].total;
+                     res.status(200).json({ total, page: parseInt(page), limit: parseInt(limit), totalPages: Math.ceil(total / limit), data: results });
+                }
+              });
        }
    });
 });
