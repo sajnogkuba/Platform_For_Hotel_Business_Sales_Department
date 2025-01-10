@@ -7,6 +7,8 @@ const db = require('./db');
 const reservations = require('./routes/reservations');
 const halls = require('./routes/halls');
 const users = require('./routes/users');
+const roles = require('./routes/roles');
+const reservationStatuses = require('./routes/reservation_statuses');
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ app.use(bodyParser.json());
 app.use('/api/reservations', reservations);
 app.use('/api/halls', halls);
 app.use('/api/users', users);
+app.use('/api/roles', roles);
+app.use('/api/reservation_statuses', reservationStatuses);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
