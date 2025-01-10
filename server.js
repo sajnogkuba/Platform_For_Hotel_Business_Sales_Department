@@ -1,6 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
 
 const db = require('./db');
 const reservations = require('./routes/reservations');
@@ -8,6 +9,7 @@ const reservations = require('./routes/reservations');
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 app.use('/api/reservations', reservations);
 
 app.get('/', (req, res) => {
