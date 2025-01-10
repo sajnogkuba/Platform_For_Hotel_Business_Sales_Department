@@ -1,7 +1,7 @@
 -- tables
 -- Table: Halls
 CREATE TABLE Halls (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(50)  NOT NULL,
     price_per_hour double(10,2)  NOT NULL,
     square_meters int  NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE Reservation_Halls (
 
 -- Table: Reservation_Statuses
 CREATE TABLE Reservation_Statuses (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(50)  NOT NULL,
     description varchar(200)  NOT NULL,
     CONSTRAINT Reservation_Statuses_pk PRIMARY KEY (id)
@@ -26,7 +26,7 @@ CREATE TABLE Reservation_Statuses (
 
 -- Table: Reservations
 CREATE TABLE Reservations (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     buyer_id int  NOT NULL,
     created_by int  NOT NULL,
     start_date datetime  NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE Reservations (
 
 -- Table: Roles
 CREATE TABLE Roles (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(50)  NOT NULL,
     description varchar(200)  NOT NULL,
     CONSTRAINT Roles_pk PRIMARY KEY (id)
@@ -45,7 +45,7 @@ CREATE TABLE Roles (
 
 -- Table: Users
 CREATE TABLE Users (
-    id int  NOT NULL,
+    id int  NOT NULL AUTO_INCREMENT,
     name varchar(100)  NOT NULL,
     email varchar(100)  NOT NULL,
     password varchar(50)  NOT NULL,

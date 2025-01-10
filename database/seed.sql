@@ -103,7 +103,6 @@ VALUES (1, 12, 2, '2025-01-15 09:00:00', '2025-01-15 11:00:00', 2),
        (30, 22, 10, '2025-02-13 09:00:00', '2025-02-13 11:00:00', 2);
 
 
--- Wypełnianie tabeli Reservation_Halls przykładowymi danymi
 INSERT INTO Reservation_Halls (Reservations_id, Halls_id, price)
 VALUES (1, 1, 1000.00),
        (1, 2, 900.00),
