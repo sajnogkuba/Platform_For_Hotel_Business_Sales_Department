@@ -1,0 +1,143 @@
+INSERT INTO Roles (id, name, description)
+VALUES (1, 'Administrator', 'Full access to all system functionalities'),
+       (2, 'Client', 'Can book conference rooms and view reservations'),
+       (3, 'Staff', 'Manages conference rooms and reservations');
+
+
+INSERT INTO Halls (id, name, price_per_hour, square_meters)
+VALUES (1, 'London', 50.00, 100),
+       (2, 'Paris', 45.00, 80),
+       (3, 'Berlin', 40.00, 120),
+       (4, 'Rome', 55.00, 90),
+       (5, 'Madrid', 60.00, 110),
+       (6, 'Warsaw', 35.00, 70),
+       (7, 'Vienna', 50.00, 85),
+       (8, 'Prague', 30.00, 60),
+       (9, 'Athens', 40.00, 75),
+       (10, 'Amsterdam', 55.00, 95),
+       (11, 'Brussels', 50.00, 100),
+       (12, 'Lisbon', 45.00, 80),
+       (13, 'Dublin', 40.00, 120),
+       (14, 'Copenhagen', 55.00, 90),
+       (15, 'Helsinki', 60.00, 110),
+       (16, 'Stockholm', 35.00, 70),
+       (17, 'Oslo', 50.00, 85),
+       (18, 'Riga', 30.00, 60),
+       (19, 'Tallinn', 40.00, 75),
+       (20, 'Vilnius', 55.00, 95);
+
+
+INSERT INTO Users (id, name, email, password, Role_id, phone)
+VALUES
+-- administrator
+(1, 'Jan Kowalski', 'admin@martyardhotel.com', 'hashed_password_admin', 1, '+48123123123'),
+-- stuff
+(2, 'Marta Sajnóg', 'marta.sajnog@martyardhotel.com', 'hashed_password_10', 3, '+48547896541'),
+(3, 'Marta Sajnóg', 'kuba.sajnog@martyardhotel.com', 'hashed_password_11', 3, '+48657841236'),
+(4, 'Kamil Nowak', 'kamil.nowak@example.com', 'hashed_password_12', 3, '+48512347865'),
+(5, 'Agata Pyszna', 'agata.pyszna@example.com', 'hashed_password_13', 3, '+48784523658'),
+(6, 'Jan Górniak', 'jan.gorniak@example.com', 'hashed_password_14', 3, '+48563254789'),
+(7, 'Julia Stępień', 'julia.stepien@example.com', 'hashed_password_15', 3, '+48652147895'),
+(8, 'Grzegorz Sokołowski', 'grzegorz.sokolowski@example.com', 'hashed_password_16', 3, '+48547965312'),
+(9, 'Aleksandra Woźniak', 'aleksandra.wozniak@example.com', 'hashed_password_17', 3, '+48651247895'),
+(10, 'Dariusz Król', 'dariusz.krol@example.com', 'hashed_password_18', 3, '+48563214785'),
+(11, 'Monika Adamska', 'monika.adamska@example.com', 'hashed_password_19', 3, '+48784563212'),
+-- clients
+(12, 'Anna Nowak', 'anna.nowak@example.com', 'hashed_password_1', 2, '+48785634123'),
+(13, 'Piotr Wiśniewski', 'piotr.wisniewski@example.com', 'hashed_password_2', 2, '+48654123123'),
+(14, 'Katarzyna Zielińska', 'katarzyna.zielinska@example.com', 'hashed_password_3', 2, '+48561234567'),
+(15, 'Michał Wójcik', 'michal.wojcik@example.com', 'hashed_password_4', 2, '+48547896541'),
+(16, 'Barbara Krawczyk', 'barbara.krawczyk@example.com', 'hashed_password_5', 2, '+48612347895'),
+(17, 'Tomasz Mazur', 'tomasz.mazur@example.com', 'hashed_password_6', 2, '+48568754123'),
+(18, 'Ewa Lewandowska', 'ewa.lewandowska@example.com', 'hashed_password_7', 2, '+48785412365'),
+(19, 'Jacek Kamiński', 'jacek.kaminski@example.com', 'hashed_password_8', 2, '+48652147832'),
+(20, 'Agnieszka Piotrowska', 'agnieszka.piotrowska@example.com', 'hashed_password_9', 2, '+48785423654'),
+(21, 'Paweł Kaczmarek', 'pawel.kaczmarek@example.com', 'hashed_password_20', 2, '+48512347895'),
+(22, 'Izabela Krupa', 'izabela.krupa@example.com', 'hashed_password_21', 2, '+48785463214'),
+(23, 'Karolina Lis', 'karolina.lis@example.com', 'hashed_password_22', 2, '+48563214785'),
+(24, 'Wojciech Morawski', 'wojciech.morawski@example.com', 'hashed_password_23', 2, '+48657841236'),
+(25, 'Zuzanna Baran', 'zuzanna.baran@example.com', 'hashed_password_24', 2, '+48547896541'),
+(26, 'Kamil Zawadzki', 'kamil.zawadzki@example.com', 'hashed_password_25', 2, '+48652147895'),
+(27, 'Natalia Sikora', 'natalia.sikora@example.com', 'hashed_password_26', 2, '+48784523658'),
+(28, 'Dominik Szymczak', 'dominik.szymczak@example.com', 'hashed_password_27', 2, '+48563254789'),
+(29, 'Joanna Kaczmarczyk', 'joanna.kaczmarczyk@example.com', 'hashed_password_28', 2, '+48785423654'),
+(30, 'Łukasz Czarnecki', 'lukasz.czarnecki@example.com', 'hashed_password_29', 2, '+48563214785');
+
+
+INSERT INTO Reservation_Statuses (id, name, description)
+VALUES (1, 'Pending', 'Reservation has been submitted but not yet confirmed'),
+       (2, 'Confirmed', 'Reservation has been confirmed by the staff'),
+       (3, 'Cancelled', 'Reservation has been cancelled by the user or staff');
+
+
+INSERT INTO Reservations (id, buyer_id, created_by, start_date, end_date, Reservation_Statuses_id)
+VALUES (1, 12, 2, '2025-01-15 09:00:00', '2025-01-15 11:00:00', 2),
+       (2, 13, 3, '2025-01-16 14:00:00', '2025-01-16 16:00:00', 1),
+       (3, 14, 4, '2025-01-17 10:00:00', '2025-01-17 12:00:00', 2),
+       (4, 15, 5, '2025-01-18 11:30:00', '2025-01-18 13:30:00', 3),
+       (5, 16, 6, '2025-01-19 16:00:00', '2025-01-19 18:00:00', 2),
+       (6, 17, 7, '2025-01-20 08:00:00', '2025-01-20 10:00:00', 2),
+       (7, 18, 8, '2025-01-21 10:00:00', '2025-01-21 12:00:00', 1),
+       (8, 19, 9, '2025-01-22 13:00:00', '2025-01-22 15:00:00', 2),
+       (9, 20, 10, '2025-01-23 09:00:00', '2025-01-23 11:00:00', 1),
+       (10, 21, 11, '2025-01-24 14:00:00', '2025-01-24 16:00:00', 2),
+       (11, 22, 2, '2025-01-25 09:00:00', '2025-01-25 11:00:00', 3),
+       (12, 23, 2, '2025-01-26 10:00:00', '2025-01-26 12:00:00', 1),
+       (13, 24, 3, '2025-01-27 15:00:00', '2025-01-27 17:00:00', 2),
+       (14, 25, 4, '2025-01-28 12:00:00', '2025-01-28 14:00:00', 3),
+       (15, 26, 5, '2025-01-29 13:00:00', '2025-01-29 15:00:00', 1),
+       (16, 27, 6, '2025-01-30 08:00:00', '2025-01-30 10:00:00', 2),
+       (17, 28, 7, '2025-01-31 09:30:00', '2025-01-31 11:30:00', 2),
+       (18, 29, 8, '2025-02-01 11:00:00', '2025-02-01 13:00:00', 3),
+       (19, 30, 9, '2025-02-02 14:00:00', '2025-02-02 16:00:00', 1),
+       (20, 12, 10, '2025-02-03 15:00:00', '2025-02-03 17:00:00', 2),
+       (21, 13, 11, '2025-02-04 10:00:00', '2025-02-04 12:00:00', 3),
+       (22, 14, 2, '2025-02-05 11:00:00', '2025-02-05 13:00:00', 1),
+       (23, 15, 3, '2025-02-06 14:00:00', '2025-02-06 16:00:00', 2),
+       (24, 16, 4, '2025-02-07 09:00:00', '2025-02-07 11:00:00', 1),
+       (25, 17, 5, '2025-02-08 10:00:00', '2025-02-08 12:00:00', 3),
+       (26, 18, 6, '2025-02-09 15:00:00', '2025-02-09 17:00:00', 2),
+       (27, 19, 7, '2025-02-10 08:00:00', '2025-02-10 10:00:00', 1),
+       (28, 20, 8, '2025-02-11 14:30:00', '2025-02-11 16:30:00', 2),
+       (29, 21, 9, '2025-02-12 12:00:00', '2025-02-12 14:00:00', 3),
+       (30, 22, 10, '2025-02-13 09:00:00', '2025-02-13 11:00:00', 2);
+
+
+-- Wypełnianie tabeli Reservation_Halls przykładowymi danymi
+INSERT INTO Reservation_Halls (Reservations_id, Halls_id, price)
+VALUES (1, 1, 1000.00),
+       (1, 2, 900.00),
+       (2, 3, 800.00),
+       (3, 4, 1100.00),
+       (3, 5, 1200.00),
+       (3, 6, 850.00),
+       (4, 7, 950.00),
+       (4, 8, 700.00),
+       (5, 9, 1000.00),
+       (6, 10, 1050.00),
+       (6, 1, 950.00),
+       (7, 2, 850.00),
+       (8, 3, 750.00),
+       (8, 4, 800.00),
+       (9, 5, 1200.00),
+       (9, 6, 900.00),
+       (9, 7, 1050.00),
+       (10, 8, 700.00),
+       (11, 9, 1000.00),
+       (11, 10, 1100.00),
+       (12, 1, 950.00),
+       (13, 2, 850.00),
+       (13, 3, 750.00),
+       (14, 4, 1100.00),
+       (14, 5, 1200.00),
+       (14, 6, 900.00),
+       (15, 7, 1050.00),
+       (16, 8, 700.00),
+       (16, 9, 1000.00),
+       (17, 10, 1100.00),
+       (18, 1, 950.00),
+       (18, 2, 850.00),
+       (18, 3, 750.00),
+       (19, 4, 1100.00),
+       (19, 5, 1200.00),
+       (20, 6, 900.00);
