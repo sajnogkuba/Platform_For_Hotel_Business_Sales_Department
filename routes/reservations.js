@@ -19,45 +19,83 @@ router.get('/:id', (req, res) => {
         } else if (results.length === 0) {
             res.status(404).json({ error: 'Reservation not found' });
         } else {
-            res.status(200).json(results[0]);
+            const reservation = results[0];
+
+            db.query('SELECT Halls.*, Reservation_Halls.price FROM Reservation_Halls INNER JOIN Halls ON Reservation_Halls.Halls_id = Halls.id WHERE Reservation_Halls.Reservations_id = ?', [req.params.id], (err, halls) => {
+               if (err) {
+                   res.status(500).json({ error: err.message });
+               } else {
+                   res.status(200).json({ ...reservation, halls });
+               }
+            });
         }
     });
 });
 
 router.post('/', (req, res) => {
-    const { buyer_id, created_by, start_date, end_date, reservation_status_id } = req.body;
+    const { buyer_id, created_by, start_date, end_date, reservation_status_id, halls } = req.body;
     db.query('INSERT INTO Reservations (buyer_id, created_by, start_date, end_date, Reservation_Statuses_id) VALUES (?, ?, ?, ?, ?)', [buyer_id, created_by, start_date, end_date, reservation_status_id], (err, result) => {
         if (err) {
             res.status(500).json({ error: err.message });
-            return;
+        } else {
+
+            const reservationId = result.insertId;
+            const reservationHallsData = halls.map(hall => [reservationId, hall.hall_id, hall.price]);
+            db.query('INSERT INTO Reservation_Halls (Reservations_id, Halls_id, price) VALUES ?', [reservationHallsData], (err, result) => {
+                if (err) {
+                    res.status(500).json({ error: err.message });
+                } else {
+                    res.status(201).json({ id: reservationId });
+                }
+            });
+
+
         }
-        res.status(201).json({ id: result.insertId });
     });
 });
 
 router.put('/:id', (req, res) => {
     const { id } = req.params;
-    const { buyer_id, created_by, start_date, end_date, reservation_status_id } = req.body;
+    const { buyer_id, created_by, start_date, end_date, reservation_status_id, halls } = req.body;
     db.query('UPDATE Reservations SET buyer_id = ?, created_by = ?, start_date = ?, end_date = ?, Reservation_Statuses_id = ? WHERE id = ?', [buyer_id, created_by, start_date, end_date, reservation_status_id, id], (err, result) => {
         if (err) {
             res.status(500).json({ error: err.message });
         } else if (result.affectedRows === 0) {
             res.status(404).json({ error: 'Reservation not found' });
         } else {
-            res.status(200).json({ message: 'Reservation updated successfully', id: id });
+            db.query('DELETE FROM Reservation_Halls WHERE Reservations_id = ?', [id], (err, result) => {
+                if (err) {
+                    res.status(500).json({ error: err.message });
+                } else {
+                    const reservationHallsData = halls.map(hall => [id, hall.hall_id, hall.price]);
+                    db.query('INSERT INTO Reservation_Halls (Reservations_id, Halls_id, price) VALUES ?', [reservationHallsData], (err, result) => {
+                        if (err) {
+                            res.status(500).json({ error: err.message });
+                        } else {
+                            res.status(200).json({ message: 'Reservation updated successfully', id: id });
+                        }
+                    });
+                }
+            });
         }
     });
 });
 
 router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    db.query('DELETE FROM Reservations WHERE id = ?', [id], (err, result) => {
+    db.query('DELETE FROM Reservation_Halls WHERE Reservations_id = ?', [id], (err, result) => {
         if (err) {
             res.status(500).json({ error: err.message });
-        } else if (result.affectedRows === 0) {
-            res.status(404).json({ error: 'Reservation not found' });
         } else {
-            res.status(200).json({ message: 'Reservation deleted successfully', id: id });
+            db.query('DELETE FROM Reservations WHERE id = ?', [id], (err, result) => {
+                if (err) {
+                    res.status(500).json({ error: err.message });
+                } else if (result.affectedRows === 0) {
+                    res.status(404).json({ error: 'Reservation not found' });
+                } else {
+                    res.status(200).json({ message: 'Reservation deleted successfully', id: id });
+                }
+            });
         }
     });
 });
