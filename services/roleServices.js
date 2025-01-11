@@ -23,3 +23,12 @@ exports.getRoleById = (id) => {
         });
     });
 }
+
+exports.checkIfRoleExists = (role_id) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT * FROM Roles WHERE id = ?', [role_id], (err, results) => {
+            if (err) return reject(err);
+            resolve(results.length > 0);
+        });
+    });
+};

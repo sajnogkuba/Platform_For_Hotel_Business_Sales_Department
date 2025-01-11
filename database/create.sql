@@ -48,7 +48,7 @@ CREATE TABLE Users (
     id int  NOT NULL AUTO_INCREMENT,
     name varchar(100)  NOT NULL,
     email varchar(100)  NOT NULL,
-    password varchar(50)  NOT NULL,
+    password varchar(100)  NOT NULL,
     Role_id int  NOT NULL,
     phone varchar(50)  NOT NULL,
     CONSTRAINT Users_pk PRIMARY KEY (id)

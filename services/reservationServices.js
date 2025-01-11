@@ -1,9 +1,4 @@
 const db = require('../db');
-const joi = require('joi');
-
-const reservationSchema = joi.object({
-
-});
 
 exports.getAllReservations = (page, limit) => {
     return new Promise((resolve, reject) => {
