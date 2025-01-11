@@ -8,7 +8,7 @@ const reservations = require('./routes/reservations');
 const halls = require('./routes/halls');
 const users = require('./routes/users');
 const roles = require('./routes/roles');
-const reservationStatuses = require('./routes/reservation_statuses');
+const reservationStatuses = require('./routes/reservationStatuses');
 
 dotenv.config();
 

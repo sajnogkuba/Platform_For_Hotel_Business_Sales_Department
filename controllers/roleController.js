@@ -13,7 +13,7 @@ exports.getRoleById = (req, res) => {
           if (results) {
               res.status(200).json(results);
           } else {
-              res.status(404).json({ error: 'Role not found' });
+              res.status(404).json({ error: 'Role not found', id: id });
           }
       })
       .catch(err => res.status(500).json({ error: err.message }));
