@@ -5,7 +5,7 @@ const db = require('../db');
 router.get('/', (req, res) => {
     const { page = 1, limit = 10 } = req.query;
     const offset = (page - 1) * limit;
-    db.query('SELECT * FROM Users LIMIT ? OFFSET ?', [parseInt(limit), parseInt(offset)], (err, results) => {
+    db.query('SELECT Users.*, Roles.name AS role_name FROM Users INNER JOIN Roles ON Users.Role_id = Roles.id LIMIT ? OFFSET ?', [parseInt(limit), parseInt(offset)], (err, results) => {
        if (err) {
            res.status(500).json({ error: err.message });
        } else{
