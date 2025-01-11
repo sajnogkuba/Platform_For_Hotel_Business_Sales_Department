@@ -1,9 +1,7 @@
 const express = require('express');
-const mysql = require('mysql2');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
-const db = require('./db');
 const reservations = require('./routes/reservations');
 const halls = require('./routes/halls');
 const users = require('./routes/users');

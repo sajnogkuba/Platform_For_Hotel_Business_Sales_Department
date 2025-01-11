@@ -1,4 +1,4 @@
-const reservationStatusesService = require('../services/reservationStatusesService');
+const reservationStatusesService = require('../services/reservationStatusesServices');
 
 exports.getAllReservationStatuses = (req, res) => {
     reservationStatusesService.getAllReservationStatuses()
