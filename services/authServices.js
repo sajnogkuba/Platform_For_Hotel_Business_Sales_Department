@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt');
-const db = require('../db');
 const userServices = require('./userServices');
 const roleServices = require('./roleServices');
+const jwt = require('jsonwebtoken');
+
+const jwtSecret = process.env.JWT_SECRET;
 
 exports.register = async (user) => {
     const { name, email, password, role_id, phone } = user;
@@ -22,4 +24,18 @@ exports.register = async (user) => {
         phone
     };
     return userServices.createUser(newUser);
+};
+
+exports.login = async (email, password) => {
+    const user = await userServices.getUserByEmail(email);
+    if (!user) {
+        throw new Error('Invalid email or password');
+    }
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+        throw new Error('Invalid email or password');
+    }
+
+    const token = jwt.sign({ id: user.id, role_id: user.Role_id }, jwtSecret, { expiresIn: '1h' });
+    return { token, user: { id: user.id, email: user.email, role_id: user.Role_id } };
 };

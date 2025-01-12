@@ -7,3 +7,8 @@ exports.registerSchema = joi.object({
     role_id: joi.number().integer().required(),
     phone: joi.string().pattern(/^\+?[0-9]{9,15}$/).required()
 });
+
+exports.loginSchema = joi.object({
+    email: joi.string().email().required(),
+    password: joi.string().min(6).required()
+});
