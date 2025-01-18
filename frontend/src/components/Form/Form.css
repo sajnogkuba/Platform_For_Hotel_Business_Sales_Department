@@ -1,4 +1,4 @@
-.login-form {
+.form {
     background: white;
     padding: 40px 40px;
     border-radius: 12px;
@@ -7,14 +7,14 @@
 
 }
 
-.login-form h2 {
+.form h2 {
     margin-bottom: 10px;
     font-size: 1.8rem;
     color: #333;
     text-align: center;
 }
 
-.login-form p {
+.form p {
     margin-bottom: 20px;
     margin-top: 10px;
     font-size: 1rem;
@@ -22,7 +22,7 @@
     color: #555;
 }
 
-.login-form form {
+.form form {
     padding: 15px;
     display: flex;
     flex-direction: column;
