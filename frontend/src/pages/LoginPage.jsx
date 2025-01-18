@@ -9,6 +9,8 @@ const LoginPage = () => {
             <Navbar />
             <div className="page-content">
                 <img src="/assets/logo.png" alt="Martyard logo"/>
+
+
                 <div>
                     <LoginButton href="/empLogin" icon="&#128188;" text="Employee Login" />
                     <LoginButton href="/customerLogin" icon="&#128100;" text="Customer Login" />

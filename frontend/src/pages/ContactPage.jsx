@@ -4,14 +4,14 @@ import Map from "../../components/Map/Map.jsx";
 import SocialMedia from "../../components/SocialMedia/SocialMedia.jsx";
 import ContactForm from "../../components/ContactForm/ContactForm.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
-import './ContactPage.css';
+import React from "react";
 
 
 const ContactPage = () => {
   return (
-      <div className="contact-page">
+      <div className="page-container">
           <Navbar/>
-          <div className="contact-page-container">
+          <div className="page-content">
               <ContactInfo/>
               <Map/>
               <SocialMedia/>
