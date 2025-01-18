@@ -8,10 +8,18 @@ const users = require('./routes/users');
 const roles = require('./routes/roles');
 const reservationStatuses = require('./routes/reservationStatuses');
 const auth = require('./routes/auth');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
+
 app.use(bodyParser.json());
 app.use('/api/reservations', reservations);
 app.use('/api/halls', halls);

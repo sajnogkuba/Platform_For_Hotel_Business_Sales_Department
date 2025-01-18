@@ -1,0 +1,41 @@
+.navbar {
+    border: 5px solid #f4bc30;
+}
+
+.navbar-container {
+    overflow-x: auto;
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-menu ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu ul li a img {
+    height: 5vh;
+    width: auto;
+}
+
+.navbar-menu ul li a {
+    text-decoration: none;
+    color: #343d3a;
+    font-size: 3vh;
+}
+
+.navbar-menu ul li a:hover {
+    color: #f4bc30;
+    transition: 0.3s;
+}
+
+.navbar-menu ul li a.active {
+    color: #f4bc30;
+}
