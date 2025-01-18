@@ -1,0 +1,23 @@
+
+.input-group label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    background: white;
+    color: black;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #b8860b;
+    outline: none;
+    box-shadow: 0 0 5px rgba(184, 134, 11, 0.4);
+}

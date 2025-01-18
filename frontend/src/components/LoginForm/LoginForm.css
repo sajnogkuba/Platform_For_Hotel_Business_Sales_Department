@@ -1,0 +1,30 @@
+.login-form {
+    background: white;
+    padding: 40px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+
+}
+
+.login-form h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+}
+
+.login-form p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #555;
+}
+
+.login-form form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
