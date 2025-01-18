@@ -7,8 +7,8 @@ const Navbar = () => {
             <div className="navbar-container">
                 <div className="navbar-menu">
                     <ul>
-                        <li><a href="/frontend/public"><img src="/assets/logo.png" alt="Martyard logo"/></a></li>
-                        <li><a href="/frontend/public" className="active">Home</a></li>
+                        <li><a href="/"><img src="/assets/logo.png" alt="Martyard logo"/></a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <li><a href="/halls">Conference halls</a></li>
