@@ -1,7 +1,7 @@
-import Navbar from "../../components/Navbar/Navbar.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
-import Button from "../../components/Button/Button.jsx";
-import Form from "../../components/Form/Form.jsx";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import Button from "../components/Button/Button.jsx";
+import Form from "../components/Form/Form.jsx";
 
 const CustomerLogin = () => {
     const inputs = [
@@ -18,7 +18,7 @@ const CustomerLogin = () => {
         <div className="page-container">
             <Navbar/>
             <div className="page-content">
-                <div className="login-form">
+                <div className="form">
                     <h2>Customer Login</h2>
                     <p>Nice to see you again!</p>
                     <Form inputs={inputs} button={button} onSubmit={(e) => e.preventDefault()}/>

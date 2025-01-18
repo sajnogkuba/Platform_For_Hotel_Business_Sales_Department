@@ -1,10 +1,11 @@
 import React from 'react';
 import Input from '../Input/Input.jsx';
 import Button from '../Button/Button.jsx';
+import './Form.css';
 
 const Form = ({ inputs, button, onSubmit }) => {
     return (
-        <form onSubmit={onSubmit} className="form">
+        <form onSubmit={onSubmit}>
             {inputs.map((input, index) => (
                 <Input
                     key={index}

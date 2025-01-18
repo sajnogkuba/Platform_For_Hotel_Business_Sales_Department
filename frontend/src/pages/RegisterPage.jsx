@@ -1,8 +1,7 @@
 import React from "react";
-import "./RegisterPage.css";
-import Navbar from "../../components/Navbar/Navbar.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
-import Form from "../../components/Form/Form.jsx";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import Form from "../components/Form/Form.jsx";
 
 const RegisterPage = () => {
     const inputs = [
@@ -24,7 +23,7 @@ const RegisterPage = () => {
           <Navbar />
 
           <div className="page-content">
-              <div className="login-form">
+              <div className="form">
                   <h2>Registration</h2>
                   <p>Please fill in the form below to create your account.</p>
                     <Form inputs={inputs} button={button} onSubmit={(e) => e.preventDefault()} />

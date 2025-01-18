@@ -1,7 +1,6 @@
-import Navbar from "../../components/Navbar/Navbar.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
-import LoginButton from "../../components/LoginButton/LoginButton.jsx";
-import "./LoginPage.css";
+import Navbar from "../components/Navbar/Navbar.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import LoginButton from "../components/LoginButton/LoginButton.jsx";
 
 const LoginPage = () => {
     return (
