@@ -1,0 +1,24 @@
+.login-button {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    justify-content: center;
+    padding: 6vw 6vw;
+    font-size: 5vh;
+    color: #343d3a;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.login-button .icon {
+    font-size: 10vh;
+    margin-right: 10px;
+    filter: grayscale(100%) brightness(100%);
+}
+
+.login-button:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
