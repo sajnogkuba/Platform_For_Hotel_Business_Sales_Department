@@ -2,3 +2,7 @@
   "email": "user@example.com",
   "password": "securepassword"
 }
+
+{
+  "Authorizon": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzEsInJvbGVfaWQiOjIsImlhdCI6MTczNzI5MzI5NCwiZXhwIjoxNzM3Mjk2ODk0fQ.V4p8voA3iAa3PLZEzalJ6DECTaIk5NtneXWmLPirSis"
+}

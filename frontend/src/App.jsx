@@ -7,9 +7,12 @@ import RegisterPage from "./pages/RegisterPage.jsx";
 import EmpLogin from "./pages/EmpLogin.jsx";
 import HallsPage from "./pages/HallsPage.jsx";
 import HallDetailsPage from "./pages/HallDetailsPage.jsx";
+import {AuthProvider} from "./context/AuthContext.jsx";
+import AccountDetailsPage from "./pages/AccountDetailsPage.jsx";
 
 function App() {
     return (
+        <AuthProvider>
         <Router>
             <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -20,8 +23,10 @@ function App() {
                 <Route path="/empLogin" element={<EmpLogin />} />
                 <Route path="/halls" element={<HallsPage />} />
                 <Route path="/halls/:id" element={<HallDetailsPage />} />
+                <Route path="/account" element={<AccountDetailsPage />} />
             </Routes>
         </Router>
+        </AuthProvider>
     );
 }
 

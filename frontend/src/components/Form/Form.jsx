@@ -6,16 +6,14 @@ import './Form.css';
 const Form = ({ inputs, button, onSubmit }) => {
     const [formData, setFormData] = useState({});
 
-    // Aktualizacja stanu dla każdego inputa
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    // Przekazanie formData do funkcji onSubmit
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formData); // Przekazanie wypełnionych danych do funkcji rodzica
+        onSubmit(formData);
     };
 
     return (

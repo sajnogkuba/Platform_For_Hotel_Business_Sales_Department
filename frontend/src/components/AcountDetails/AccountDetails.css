@@ -1,0 +1,42 @@
+.account-details{
+    width: 95%;
+    height: 57vh;
+    padding: 4vh;
+    background: white;
+    color: black;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    justify-items: left;
+    text-align: left;
+}
+
+.account-details h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.account-details p {
+    color: #666666;
+    font-size: 2vh;
+    line-height: 1.8;
+}
+
+.account-info strong {
+    color: #d4af37;
+    font-size: 2vh;
+}
+
+.account-button {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 12px;
+    background: #f4bc30;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 20px;
+}

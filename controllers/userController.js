@@ -1,5 +1,6 @@
 const userServices = require('../services/userServices');
 const joi = require('joi');
+const {verify} = require("jsonwebtoken");
 
 const userSchema = joi.object({
     name: joi.string().max(100).required(),
@@ -77,5 +78,27 @@ exports.deleteUser = async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
+    }
+};
+
+exports.getCurrentUser = async (req, res) => {
+    try {
+        const token = req.headers.authorization?.split(' ')[1];
+        if (!token) {
+            return res.status(401).json({ message: 'No token provided' });
+        }
+
+        const decoded = verify(token, process.env.JWT_SECRET);
+        const userId = decoded.id;
+
+        const user = await userServices.getUserById(userId);
+        if (!user) {
+            return res.status(404).json({ message: decoded });
+        }
+
+        res.json(user);
+    } catch (error) {
+        console.error('Error in getCurrentUser:', error);
+        res.status(403).json({ message: 'Invalid or expired token' });
     }
 };

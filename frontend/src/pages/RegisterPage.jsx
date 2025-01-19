@@ -31,9 +31,8 @@ const RegisterPage = () => {
                 email: formData.email,
                 password: formData.password,
                 phone: formData.phone,
-                role_id: 2, // Domyślna rola użytkownika
+                role_id: 2,
             };
-            console.log(userData);
             const result = await registerUser(userData);
             alert("Registration successful! Your ID is: " + result.id);
         } catch (error) {
