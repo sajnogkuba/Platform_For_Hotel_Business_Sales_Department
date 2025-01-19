@@ -1,11 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from '../Input/Input.jsx';
 import Button from '../Button/Button.jsx';
 import './Form.css';
 
 const Form = ({ inputs, button, onSubmit }) => {
+    const [formData, setFormData] = useState({});
+
+    // Aktualizacja stanu dla każdego inputa
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    // Przekazanie formData do funkcji onSubmit
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(formData); // Przekazanie wypełnionych danych do funkcji rodzica
+    };
+
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
             {inputs.map((input, index) => (
                 <Input
                     key={index}
@@ -15,6 +29,7 @@ const Form = ({ inputs, button, onSubmit }) => {
                     name={input.name}
                     placeholder={input.placeholder}
                     required={input.required}
+                    onChange={handleInputChange}
                 />
             ))}
             <Button text={button.text} type={button.type || 'submit'} />

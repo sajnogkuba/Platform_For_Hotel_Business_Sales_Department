@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar.jsx";
 import Footer from "../components/Footer/Footer.jsx";
 import Form from "../components/Form/Form.jsx";
+import { registerUser } from "../services/authService.js";
 
 const RegisterPage = () => {
     const inputs = [
@@ -18,6 +19,28 @@ const RegisterPage = () => {
         type: "submit"
     };
 
+    const handleRegister = async (formData) => {
+        if (formData.password !== formData["confirm-password"]) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        try {
+            const userData = {
+                name: `${formData["first-name"]} ${formData["last-name"]}`,
+                email: formData.email,
+                password: formData.password,
+                phone: formData.phone,
+                role_id: 2, // Domyślna rola użytkownika
+            };
+            console.log(userData);
+            const result = await registerUser(userData);
+            alert("Registration successful! Your ID is: " + result.id);
+        } catch (error) {
+            alert("Registration failed: " + error.message);
+        }
+    };
+
   return (
       <div className="page-container">
           <Navbar />
@@ -26,7 +49,7 @@ const RegisterPage = () => {
               <div className="form">
                   <h2>Registration</h2>
                   <p>Please fill in the form below to create your account.</p>
-                    <Form inputs={inputs} button={button} onSubmit={(e) => e.preventDefault()} />
+                    <Form inputs={inputs} button={button} onSubmit={handleRegister} />
                   <p>If you need assistance, please contact Tech-Support: tel. +48 603 608 605</p>
               </div>
           </div>
