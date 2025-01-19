@@ -93,3 +93,9 @@ body, html {
     flex-direction: column;
     gap: 15px;
 }
+
+.container {
+    background: white;
+    color: black;
+    padding: 20px;
+}

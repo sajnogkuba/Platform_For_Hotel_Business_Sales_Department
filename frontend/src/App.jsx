@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import CustomerLogin from "./pages/CustomerLogin.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
 import EmpLogin from "./pages/EmpLogin.jsx";
+import HallsPage from "./pages/HallsPage.jsx";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/customerLogin" element={<CustomerLogin />} />
                 <Route path="/registration" element={<RegisterPage />} />
                 <Route path="/empLogin" element={<EmpLogin />} />
+                <Route path="/halls" element={<HallsPage />} />
             </Routes>
         </Router>
     );
